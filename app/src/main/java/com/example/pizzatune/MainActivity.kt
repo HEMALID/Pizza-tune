@@ -9,14 +9,14 @@ import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.example.pizzatune.databinding.ActivityMainBinding
 import com.example.pizzatune.fragment.HomeFragment
-import com.example.pizzatune.fragment.LoginFragment
+import com.example.pizzatune.fragment.HistoryFragment
 import com.example.pizzatune.fragment.MenuFragment
 import com.example.pizzatune.fragment.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 
     private val home = HomeFragment()
-    private val login = LoginFragment()
+    private val login = HistoryFragment()
     private val menu = MenuFragment()
     private val profile = ProfileFragment()
     private lateinit var binding: ActivityMainBinding
