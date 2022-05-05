@@ -5,9 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pizzatune.R
+import com.example.pizzatune.databinding.FragmentLoginBinding
+import com.example.pizzatune.login.UserLoginFragment
 
-class ProfileFragment : Fragment() {
+class HistoryFragment : Fragment() {
+
+    private val login =UserLoginFragment()
+    private lateinit var binding: FragmentLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,11 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding = FragmentLoginBinding.inflate(layoutInflater)
+
+
+        return binding.root
     }
+
 
 }

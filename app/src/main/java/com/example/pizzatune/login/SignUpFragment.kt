@@ -1,17 +1,13 @@
-package com.example.pizzatune.fragment
+package com.example.pizzatune.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pizzatune.databinding.FragmentLoginBinding
-import com.example.pizzatune.login.UserLoginFragment
+import com.example.pizzatune.R
 
-class LoginFragment : Fragment() {
-
-    private val login =UserLoginFragment()
-    private lateinit var binding: FragmentLoginBinding
+class SignUpFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +21,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(layoutInflater)
-
-
-        return binding.root
+        return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
 
 

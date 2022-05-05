@@ -1,13 +1,21 @@
 package com.example.pizzatune.login
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pizzatune.R
+import androidx.fragment.app.Fragment
+import com.example.pizzatune.databinding.FragmentUserLoginBinding
+
 
 class UserLoginFragment : Fragment() {
+
+    private lateinit var binding:FragmentUserLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +28,22 @@ class UserLoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login2, container, false)
+
+        binding = FragmentUserLoginBinding.inflate(layoutInflater)
+
+        var text = "Don't have account? Sign Up"
+        val ss=SpannableString("Request")
+        val clickableSpan: ClickableSpan=object : ClickableSpan() {
+            override fun onClick(textView: View) {
+                val intent=Intent(activity, SignUpFragment::class.java)
+                startActivity(intent)
+            }
+        }
+        ss.setSpan(clickableSpan,21,27,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.forSignUp.text = ss
+        binding.forSignUp.movementMethod = LinkMovementMethod.getInstance()
+
+        return binding.root
     }
 
 }
