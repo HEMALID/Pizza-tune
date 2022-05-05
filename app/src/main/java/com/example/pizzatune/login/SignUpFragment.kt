@@ -1,13 +1,17 @@
 package com.example.pizzatune.login
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pizzatune.R
+import androidx.fragment.app.Fragment
+import com.example.pizzatune.databinding.FragmentSignUpBinding
+
 
 class SignUpFragment : Fragment() {
+
+    private lateinit var binding:FragmentSignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +24,29 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+
+        binding = FragmentSignUpBinding.inflate(layoutInflater)
+
+        binding.logo.setOnClickListener{
+            clickEvent()
+        }
+        binding.miniLogo.setOnClickListener{
+            clickEvent()
+        }
+
+
+        
+
+
+        return binding.root
     }
+
+    @SuppressLint("UseRequireInsteadOfGet")
+    fun clickEvent(){
+        val add=ProfileDilogFragment()
+        add.show(activity!!.supportFragmentManager, "dialog")
+    }
+
 
 
 }

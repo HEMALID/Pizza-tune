@@ -1,11 +1,13 @@
 package com.example.pizzatune.login
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,8 +42,11 @@ class UserLoginFragment : Fragment() {
             }
         }
         ss.setSpan(clickableSpan,21,27,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        ss.setSpan(StyleSpan(Typeface.BOLD), 21, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.forSignUp.text = ss
         binding.forSignUp.movementMethod = LinkMovementMethod.getInstance()
+
+
 
         return binding.root
     }
