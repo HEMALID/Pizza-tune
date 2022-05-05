@@ -2,4 +2,11 @@
     <string name="app_name">Pizza tune</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pizza_tune">Pizza Tune</string>
+    <string name="opens">Opens</string>
+    <string name="details">DETAILS</string>
+    <string name="detail1">Home Delivery,Vegetarian Only,Digital Payment accepted Outdoor Seating Ultimated Pizza,Free Parking,Indoor Seating</string>
+    <string name="address"><![CDATA[G1 & G2 Jyoti Pizza,Shyamal Cross Road,Satellite,Ahmedabad]]></string>
+
+
 </resources>

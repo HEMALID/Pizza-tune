@@ -3,6 +3,8 @@ package com.example.pizzatune
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.example.pizzatune.databinding.ActivityMainBinding
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.home -> replaceFrahment(home)
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        binding.bottomNavigation.selectedItemId=R.id.home
 
 
         // StatusBarColor
@@ -46,10 +50,14 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun replaceFrahment(fragment: Fragment){
-        if (fragment !=null){
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container,fragment)
-            transaction.commit()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container,fragment)
+        transaction.commit()
+
+        if(fragment == home){
+            binding.btnCheck.visibility= View.VISIBLE
+        }else{
+            binding.btnCheck.visibility= View.GONE
         }
     }
 

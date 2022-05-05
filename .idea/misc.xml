@@ -9,20 +9,17 @@
         <entry key="app/src/main/res/drawable/selected_dot.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.1255" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/fragment_forget.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_login2.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_placeholder.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.1546875" />
-        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab1.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab2.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab3.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab4.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab5.xml" value="0.1546875" />
-        <entry key="app/src/main/res/layout/fragment_user_login.xml" value="0.11" />
         <entry key="app/src/main/res/layout/item.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/tbl_laout.xml" value="0.1546875" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.1546875" />
