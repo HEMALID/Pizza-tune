@@ -8,14 +8,31 @@
     tools:context=".fragment.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/img_pizzaImage"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:src="@mipmap/ic_launcher"
-            tools:ignore="ContentDescription,MissingConstraints" />
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="200dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tabBackground="@drawable/viewpager_indicators"
+            android:clickable="false"
+            app:tabGravity="center"
+            android:translationY="16dp"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="0dp" />
 
         <TextView
             android:id="@+id/tv_pizzaName"
@@ -26,7 +43,7 @@
             android:textSize="25sp"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_pizzaImage"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
             android:layout_marginStart="20dp"
             tools:ignore="MissingConstraints" />
         <TextView
