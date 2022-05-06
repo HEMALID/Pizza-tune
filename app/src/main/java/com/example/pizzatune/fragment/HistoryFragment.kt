@@ -50,7 +50,7 @@ class HistoryFragment : Fragment() {
     }
 
     fun loginFragment(){
-        val fragment = ShowHistoryFragment()
+        val fragment = HistoryFragment()
         val fm : FragmentManager= requireActivity().supportFragmentManager
         val ft: FragmentTransaction= fm.beginTransaction()
         ft.replace(R.id.fragment_container, fragment)
@@ -58,7 +58,7 @@ class HistoryFragment : Fragment() {
     }
 
     fun historyFragment(){
-        val fragment = ShowHistoryFragment()
+        val fragment = HistoryFragment()
         val fm : FragmentManager= requireActivity().supportFragmentManager
         val ft: FragmentTransaction= fm.beginTransaction()
         ft.replace(R.id.fragment_container, fragment)
