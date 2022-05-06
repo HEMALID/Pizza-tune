@@ -32,34 +32,36 @@ class HistoryFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHistoryBinding.inflate(layoutInflater)
 
-        val sharedPreferences = activity?.getSharedPreferences("pref", 0)
-        val emailId = sharedPreferences?.getString("email", "")
-        val password = sharedPreferences?.getString("password", "")
+     /*   val sharedPreferences = getSharedPreferences("pref", 0)
+        val countryCode = sharedPreferences.getString("countryCode", "")
+        val mobileNumber = sharedPreferences.getString("mobileNumber", "")
 
         Handler().postDelayed({
-            if (emailId.equals("") && password.equals("")) {
-                loginFragment()
+            if (countryCode.equals("") && mobileNumber.equals("")) {
+               historyFragment()
+
             } else {
-                historyFragment()
+                loginFragment()
             }
-        },0)
+            activity?.finish()
+        }, 3000)*/
 
         return binding.root
     }
 
-    private fun loginFragment(){
-        val fragment = UserLoginFragment()
-        val fm : FragmentManager=activity?.supportFragmentManager!!
+    fun loginFragment(){
+        val fragment = ShowHistoryFragment()
+        val fm : FragmentManager= requireActivity().supportFragmentManager
         val ft: FragmentTransaction= fm.beginTransaction()
-        ft.replace(R.id.history_fragment_container, fragment)
+        ft.replace(R.id.fragment_container, fragment)
         ft.commit()
     }
 
-    private fun historyFragment(){
+    fun historyFragment(){
         val fragment = ShowHistoryFragment()
-        val fm : FragmentManager=activity?.supportFragmentManager!!
+        val fm : FragmentManager= requireActivity().supportFragmentManager
         val ft: FragmentTransaction= fm.beginTransaction()
-        ft.replace(R.id.history_fragment_container, fragment)
+        ft.replace(R.id.fragment_container, fragment)
         ft.commit()
     }
 
