@@ -10,5 +10,7 @@
     <color name="maroon"> #990F02</color>
     <color name="scaelet"> #900D09</color>
     <color name="red">#c84740</color>
+    <color name="golden">#FFD700</color>
+    <color name="lightgray">#D3D3D3</color>
 
 </resources>
