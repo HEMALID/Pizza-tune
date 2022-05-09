@@ -134,8 +134,6 @@ class UserLoginFragment : Fragment() {
                     var json: String?= gson.toJson(editor)
                     editor.putString("loginName",json)
                     editor.apply()
-                    login()
-                    login1()
                     Toast.makeText(context, responseFromApi.message, Toast.LENGTH_SHORT).show()
                 }
             }
