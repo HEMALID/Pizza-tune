@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_placeholder.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/fragment_profile_dilog.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_setting1.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_setting2.xml" value="0.18072916666666666" />
@@ -32,6 +33,7 @@
         <entry key="app/src/main/res/layout/fragment_tab4.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab5.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_user_login.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/ice_cream_layout.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/item.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/tbl_laout.xml" value="0.1546875" />

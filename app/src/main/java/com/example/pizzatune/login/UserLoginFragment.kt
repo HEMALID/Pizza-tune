@@ -1,6 +1,8 @@
 package com.example.pizzatune.login
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
@@ -11,44 +13,98 @@ import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.pizzatune.databinding.FragmentUserLoginBinding
+import com.example.pizzatune.fragment.ProfileFragment
+import com.example.pizzatune.loginmodel.userlogin.ApiInterface
+import com.example.pizzatune.loginmodel.userlogin.RetrofitHelper
+import com.example.pizzatune.loginmodel.userlogin.model.LoginRequest
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class UserLoginFragment : Fragment() {
 
     private lateinit var binding:FragmentUserLoginBinding
-
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
+            sharedPreferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View ?{
+        binding = FragmentUserLoginBinding.inflate(layoutInflater,container,false)
 
-        binding = FragmentUserLoginBinding.inflate(inflater,container,false)
-
-        var text = "Don't have account? Sign Up"
-        val ss=SpannableString("Request")
+        val text = "Don't have account? Sign Up"
+        val ss=SpannableString(text)
         val clickableSpan: ClickableSpan=object : ClickableSpan() {
             override fun onClick(textView: View) {
-                val intent=Intent(activity, SignUpFragment::class.java)
-                startActivity(intent)
+               /* val intent=Intent(activity, SignUpFragment::class.java)
+                startActivity(intent)*/
             }
         }
-        ss.setSpan(clickableSpan,21,27,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        ss.setSpan(StyleSpan(Typeface.BOLD), 21, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        ss.setSpan(clickableSpan,20,27,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        ss.setSpan(StyleSpan(Typeface.BOLD), 20, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.forSignUp.text = ss
         binding.forSignUp.movementMethod = LinkMovementMethod.getInstance()
 
+        binding.btnsignin.setOnClickListener {
+
+            if (binding.emailId.editText?.text?.isEmpty()!! &&
+                binding.password.editText?.text?.isEmpty()!!
+            ) {
+                Toast.makeText(context, "Please enter both the values", Toast.LENGTH_SHORT).show()
+            } else {
+
+                CoroutineScope(Dispatchers.IO).launch {
+                    LoginApi("jacks@mailinator.com","123456")
+
+                }
+            }  //  email : jacks@mailinator.com ,"password": "123456"
+        }
 
 
         return binding.root
+    }
+
+    private suspend fun LoginApi(email : String,password: String) {
+
+        val apiInterFace = RetrofitHelper.retrofit.create(ApiInterface::class.java)
+
+
+        val response = apiInterFace.createPost(
+            LoginRequest(
+                LoginRequest.Data(
+                     email, password
+                )
+            )
+        )
+
+        lifecycleScope.launch {
+            if (response!!.isSuccessful && response.body() != null) {
+                val responseFromApi = response.body()!!
+                if (responseFromApi.status == 1) {
+                    val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                    editor.putString("FirstName", responseFromApi.data.first_name)
+                    editor.putString("LastName", responseFromApi.data.last_name)
+                    editor.apply()
+                    val intent = Intent(activity, ProfileFragment::class.java)
+                    startActivity(intent)
+                    Toast.makeText(context, responseFromApi.message, Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(context, "Unsuccessful message", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
 }

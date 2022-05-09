@@ -8,7 +8,8 @@ import com.example.pizzatune.databinding.IceCreamLayoutBinding
 import com.example.pizzatune.tab1.Tab1Adapter
 import com.example.pizzatune.tab1.model.MenuX
 
-class Tab3Adapter (var con: Context, private var menulist: ArrayList<MenuX>) :
+class Tab3Adapter{
+    /*(var con: Context, private var menulist: ArrayList<MenuX>) :
     RecyclerView.Adapter<Tab3Adapter.ViewHolder>() {
 
     class ViewHolder(var binding: IceCreamLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -29,6 +30,6 @@ class Tab3Adapter (var con: Context, private var menulist: ArrayList<MenuX>) :
 
     override fun getItemCount(): Int {
         return menulist.size
-    }
+    }*/
 
 }

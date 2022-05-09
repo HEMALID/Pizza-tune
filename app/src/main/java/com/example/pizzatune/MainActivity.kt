@@ -1,5 +1,6 @@
 package com.example.pizzatune
 
+import android.annotation.SuppressLint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,11 +17,12 @@ import com.example.pizzatune.fragment.ProfileFragment
 class MainActivity : AppCompatActivity() {
 
     private val home = HomeFragment()
-    private val login = HistoryFragment()
+    private val history = HistoryFragment()
     private val menu = MenuFragment()
     private val profile = ProfileFragment()
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("ObsoleteSdkInt")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replaceFrahment(home)
                 R.id.menu -> replaceFrahment(menu)
-                R.id.loginPage -> replaceFrahment(login)
+                R.id.history -> replaceFrahment(history)
                 R.id.profile -> replaceFrahment(profile)
             }
             true

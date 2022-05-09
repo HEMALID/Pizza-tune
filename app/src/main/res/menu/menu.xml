@@ -10,7 +10,7 @@
         android:icon="@drawable/forkandknife"
         tools:ignore="MenuTitle" />
 
-    <item android:id="@+id/loginPage"
+    <item android:id="@+id/history"
         android:icon="@drawable/login"
         tools:ignore="MenuTitle" />
 
