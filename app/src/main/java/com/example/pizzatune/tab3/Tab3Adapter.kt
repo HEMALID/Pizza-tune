@@ -1,14 +1,15 @@
-package com.example.pizzatune.tab1
+package com.example.pizzatune.tab3
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pizzatune.databinding.IceCreamLayoutBinding
+import com.example.pizzatune.tab1.Tab1Adapter
 import com.example.pizzatune.tab1.model.MenuX
 
-class Tab1Adapter(var con: Context, private var menulist: ArrayList<MenuX>) :
-    RecyclerView.Adapter<Tab1Adapter.ViewHolder>() {
+class Tab3Adapter (var con: Context, private var menulist: ArrayList<MenuX>) :
+    RecyclerView.Adapter<Tab3Adapter.ViewHolder>() {
 
     class ViewHolder(var binding: IceCreamLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
