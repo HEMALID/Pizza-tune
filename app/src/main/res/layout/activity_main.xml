@@ -17,15 +17,18 @@
     <Button
         android:id="@+id/btn_check"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="45dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@color/maroon"
         android:layout_above="@id/bottom_navigation"
         android:text="Book A Table"
+        android:textColor="@color/white"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         app:itemIconTint="@color/maroon"
         app:menu="@menu/menu" />

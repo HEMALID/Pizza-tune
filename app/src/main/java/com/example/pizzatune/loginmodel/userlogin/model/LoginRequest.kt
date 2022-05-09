@@ -5,11 +5,10 @@ data class LoginRequest(
 ){
     data class Data(
         val email: String,
-        val password: String
-
-       /* ,val restaurant_id: String,
+        val password: String,
+        val restaurant_id: String,
         val user_parent_id: String,
         val device_token: String,
-        val device_type: String*/
+        val device_type: String
     )
 }

@@ -59,7 +59,7 @@ class HistoryFragment : Fragment() {
 
     @SuppressLint("UseRequireInsteadOfGet")
     fun historyFragment(){
-        val fragment = HistoryFragment()
+        val fragment = ShowHistoryFragment()
         val fm : FragmentManager= activity!!.supportFragmentManager
         val ft: FragmentTransaction= fm.beginTransaction()
         ft.replace(R.id.history_fragment_container, fragment)

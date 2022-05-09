@@ -8,22 +8,22 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitHelper {
 
     companion object{
-        val BASE_URL = "http://139.59.84.117/mocha/api/"
+        private const val BASE_URL = "http://139.59.84.117/mocha/api/"
 
-        val interceptor : HttpLoggingInterceptor= HttpLoggingInterceptor().apply {
+        val interceptor= HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
-        val client : OkHttpClient= OkHttpClient.Builder().apply {
+        private val client : OkHttpClient= OkHttpClient.Builder().apply {
             addInterceptor(interceptor)
         }.build()
 
 
-        val retrofit = Retrofit.Builder()
+        val retrofit =Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
-            .build()
+            .build()!!
 
     }
 

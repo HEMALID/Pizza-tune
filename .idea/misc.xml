@@ -26,6 +26,8 @@
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_setting1.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_setting2.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/fragment_show_history.xml" value="0.1388888888888889" />
+        <entry key="app/src/main/res/layout/fragment_show_profile.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab1.xml" value="0.1546875" />
         <entry key="app/src/main/res/layout/fragment_tab2.xml" value="0.1546875" />
