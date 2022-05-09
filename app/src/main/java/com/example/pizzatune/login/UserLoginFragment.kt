@@ -31,7 +31,7 @@ class UserLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentUserLoginBinding.inflate(layoutInflater)
+        binding = FragmentUserLoginBinding.inflate(inflater,container,false)
 
         var text = "Don't have account? Sign Up"
         val ss=SpannableString("Request")
